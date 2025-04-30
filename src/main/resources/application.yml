@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: zai
+
+resilience4j.circuitbreaker:
+  instances:
+    weather:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 5
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10000
+      permittedNumberOfCallsInHalfOpenState: 3
